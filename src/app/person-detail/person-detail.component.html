@@ -1,0 +1,39 @@
+
+
+<h1> Person details </h1>
+
+
+<div class="loading" *ngIf="loading">
+    Loading...
+</div>
+
+<ng-container *ngIf="!loading">
+
+    <div class="error" *ngIf="error">
+        There was an error loading the page
+    </div>
+    
+    <div class="error" *ngIf="!error && !personDetail">
+        There is no information for this person
+    </div>
+        
+    <div *ngIf="!error && personDetail">
+
+        <div class="block">
+            <span class="label"> ID: </span>
+            <span class="value"> {{ personDetail.personId }} </span>
+        </div>
+        <div class="block">
+            <span class="label"> Name: </span>
+            <span class="value"> {{ personDetail.fullName }} </span>
+        </div>
+        <div class="block">
+            <span class="label"> Address: </span>
+            <span class="value"> {{ personDetail.currentAddress }} </span>
+        </div>
+
+    </div>
+
+</ng-container>
+
+
