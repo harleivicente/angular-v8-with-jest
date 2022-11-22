@@ -8,6 +8,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
+    "test:changed": "jest --onlyChanged",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -42,8 +43,6 @@
   },
   "jest": {
     "preset": "jest-preset-angular",
-    "setupFilesAfterEnv": [
-      "./setup-jest.ts"
-    ]
+    "setupFilesAfterEnv": [ "./setup-jest.ts" ]
   }
 }
