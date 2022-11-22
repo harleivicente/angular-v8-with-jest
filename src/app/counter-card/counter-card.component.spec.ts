@@ -18,13 +18,31 @@ describe('CounterCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve incrementar o valor do contador', () => {
-    component.increment();
-    expect(component.value).toEqual(1);
+  describe('valor inicial', () => {
+
+    it('valor inicial é zero', async () => {
+      expect(component.valor).toBe(0);
+    });
+
   });
 
-  it('deve iniciar com valor zero', () => {
-    expect(component.value).toEqual(0);
+  describe('incrementar', () => {
+
+    it('deve incrementar o valor interno em uma unidade', async () => {
+
+      // Act
+      component.incrementar();
+      component.incrementar();
+
+      // Assert
+      expect(component.valor).toBe(2);
+
+    });
+
+    it.todo('o valor interno não pode passar do valor máximo');
+
   });
+
+  describe('atingiuValorMaximo', () => {});
 
 });
