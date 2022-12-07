@@ -13,7 +13,8 @@ export interface Person {
   styleUrls: ['./person-card.component.scss']
 })
 export class PersonCardComponent implements OnInit {
-  @Input() person: Person | undefined;
+  @Input() loading = false;
+  @Input() person: Person;
 
   constructor() {}
 

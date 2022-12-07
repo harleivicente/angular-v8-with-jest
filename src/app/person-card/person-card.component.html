@@ -1,24 +1,28 @@
 
+<div class="loading" *ngIf="loading">
+    <span>Carregando...</span>
+</div>
 
-<div class="empty" *ngIf="!person">
-    <span> No person has been provided. </span>
+
+<div class="empty" *ngIf="!loading && !person">
+    <span>Nenhuma pessoa foi passada.</span>
 </div>
 
 
 <ng-container *ngIf="person">
-    <div class="block">
-        <span class="label"> ID: </span>
-        <span class="value"> #{{ person.id }} </span>
+    <div class="block id">
+        <span class="label">ID: </span>
+        <span class="value">{{ person.id }}</span>
     </div>
-    <div class="block">
-        <span class="label"> Name: </span>
-        <span class="value"> {{ person.name }} </span>
+    <div class="block name">
+        <span class="label">Name: </span>
+        <span class="value">{{ person.name }}</span>
     </div>
-    <div class="block">
-        <span class="label"> Age: </span>
-        <span class="value"> {{ person.age }} years </span>
+    <div class="block age">
+        <span class="label">Age: </span>
+        <span class="value">{{ person.age }} years</span>
     </div>
     <div>
-        <div class="badge" *ngIf="person.isCustomer"> CUSTOMER </div>
+        <div class="badge" *ngIf="person.isCustomer">CUSTOMER</div>
     </div>
 </ng-container>
