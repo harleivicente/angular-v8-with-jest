@@ -22,7 +22,7 @@ export class PersonDetailComponent implements OnInit {
     const personId: number = parseInt(this.route.snapshot.params.id, 10);
     this.loading = true;
 
-    this.personDetailService.getPersonDetails(personId).subscribe({
+    this.personDetailService.getPersonDetails(personId, true).subscribe({
       error: () => {
         this.error = true;
         this.loading = false;

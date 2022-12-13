@@ -17,18 +17,18 @@
         There is no information for this person
     </div>
         
-    <div *ngIf="!error && personDetail">
+    <div class="details" *ngIf="!error && personDetail">
 
         <div class="block">
-            <span class="label"> ID: </span>
+            <span class="label"> ID:</span>
             <span class="value"> {{ personDetail.personId }} </span>
         </div>
         <div class="block">
-            <span class="label"> Name: </span>
+            <span class="label"> Name:</span>
             <span class="value"> {{ personDetail.fullName }} </span>
         </div>
         <div class="block">
-            <span class="label"> Address: </span>
+            <span class="label"> Address:</span>
             <span class="value"> {{ personDetail.currentAddress }} </span>
         </div>
 

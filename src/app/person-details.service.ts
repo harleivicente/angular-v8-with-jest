@@ -17,7 +17,7 @@ export class PersonDetailsService {
 
   constructor() {}
 
-  getPersonDetails(personId: number): Observable<PersonDetail> {
+  getPersonDetails(personId: number, fullDetails: boolean): Observable<PersonDetail> {
 
     if (personId === 777) {
       return throwError(() => new Error('Error loading person details'));
@@ -31,7 +31,7 @@ export class PersonDetailsService {
       numberOfChildren: 3,
     }).pipe(
       delay(500)
-    )
+    );
 
   }
 }
