@@ -14,6 +14,9 @@ export class CounterCardComponent implements OnInit {
   ngOnInit(): void {}
 
   incrementar() {
+    if (this.valor === VALOR_MAXIMO) {
+      return;
+    }
     this.valor = this.valor + 1;
   }
 

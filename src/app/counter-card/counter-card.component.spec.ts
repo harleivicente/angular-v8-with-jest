@@ -18,31 +18,34 @@ describe('CounterCardComponent', () => {
     fixture.detectChanges();
   });
 
-  describe('valor inicial', () => {
 
-    it('valor inicial é zero', async () => {
-      expect(component.valor).toBe(0);
-    });
+  it('valor inicial é zero', () => {
+    expect(component.valor).toBe(0);
+  });
+
+  it('deve incrementar o valor interno em uma unidade ao executar o metodo incrementar', () => {
+
+    // Act
+    component.incrementar();
+    component.incrementar();
+
+    // Assert
+    expect(component.valor).toBe(2);
 
   });
 
-  describe('incrementar', () => {
+  it('o valor interno não pode passar do valor máximo', () => {
 
-    it('deve incrementar o valor interno em uma unidade', async () => {
+    // Act
+    component.incrementar();
+    component.incrementar();
+    component.incrementar();
+    component.incrementar();
 
-      // Act
-      component.incrementar();
-      component.incrementar();
-
-      // Assert
-      expect(component.valor).toBe(2);
-
-    });
-
-    it.todo('o valor interno não pode passar do valor máximo');
+    // Assert
+    expect(component.valor).toStrictEqual(3);
 
   });
 
-  describe('atingiuValorMaximo', () => {});
 
 });
