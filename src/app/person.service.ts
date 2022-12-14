@@ -24,8 +24,9 @@ export class PersonService {
     return new Observable(observer => {
       setTimeout(() => {
 
-        observer.error(new Error('Unable to save new person'));
-        // observer.next(true);
+        // observer.error(new Error('Unable to save new person'));
+        observer.next(true);
+        observer.complete();
 
       }, 800);
     });

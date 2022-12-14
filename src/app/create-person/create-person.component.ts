@@ -23,7 +23,7 @@ export class CreatePersonComponent implements OnInit {
       Validators.maxLength(10)
     ]),
     age: new FormControl('', [ IsNumberValidator ]),
-    gender: new FormControl('MALE')
+    gender: new FormControl('FEMALE')
   });
 
   constructor(private personService: PersonService) {}
