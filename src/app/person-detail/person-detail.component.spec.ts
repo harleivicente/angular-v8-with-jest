@@ -13,6 +13,7 @@ describe('PersonDetailComponent', () => {
   beforeEach(async () => {
 
     getPersonDetailsMock = jest.fn();
+
     const mockedRoute = { snapshot: { params: { id: 34 } } };
 
     await TestBed.configureTestingModule({
@@ -71,6 +72,7 @@ describe('PersonDetailComponent', () => {
 
     // Assert
     const loading = componentElement.querySelector('.loading');
+    expect(loading).toBeTruthy();
     expect(loading.textContent).toMatch(/Loading.../i);
 
   });
